@@ -1,9 +1,16 @@
 Revision history for Perl extension Tie::DB_Lock.
 
-0.01  Tue May 26 16:27:27 1998
-	- original version; created by h2xs 1.18
+0.01 Tue May 26 16:27:27 1998
+   - original version; created by h2xs 1.18
 
-0.02  Thu Jul 23 11:08:25 EDT 1998
+0.02 Thu Jul 23 11:08:25 EDT 1998
    - I had omitted a file (db/README) from MANIFEST,
      that made "make test" fail.  The code was still
      fully operational, but the test failed.
+
+0.03 Thu Jul 23 18:52:07 EDT 1998
+   - cpan-testers report that 'make test' fails test 4,5,6 on Irix.
+     I'm not sure why, so I've added a 'verbose' mode to 'make test',
+     and one more test (#4) that may shed some light.  Do "make test
+     TEST_VERBOSE=1" to try it.  None of the real functionality of the
+     module is different in this release.
