@@ -14,3 +14,11 @@ Revision history for Perl extension Tie::DB_Lock.
      and one more test (#4) that may shed some light.  Do "make test
      TEST_VERBOSE=1" to try it.  None of the real functionality of the
      module is different in this release.
+
+0.04 Sun Jul 26 12:11:06 EDT 1998
+   - Apparently cpan-testers can't get the tests to pass on 
+     i86pc-solaris 2.6 either.  The error shown under TEST_VERBOSE=1
+     is "Bad file number."  Perhaps this has something to do with
+     the FileHandle package.  I've added a VERY_VERBOSE=1 test flag that
+	  should help track the problem further - it just sets the variable
+	  $Tie::DB_Lock::VERBOSE to 1.

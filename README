@@ -43,7 +43,7 @@ To install the module, do the usual:
 
    perl Makefile.PL
    make
-   make test
+   make test   (optionally set TEST_VERBOSE=1 or VERY_VERBOSE=1)
    make install
 
 
