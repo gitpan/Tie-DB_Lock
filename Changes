@@ -26,3 +26,11 @@ Revision history for Perl extension Tie::DB_Lock.
 0.05 Tue Aug 11 18:14:32 EDT 1998
    - Changed the TIEHASH method so that it returns undef when the $TIEPACK->TIEHASH
      method fails.  This makes error checking much more reliable.
+
+0.06 Tue Sep  8 00:42:46 EDT 1998
+   - Put a #line statement at line 161.  Shouldn't affect performance, but
+     now Perl should know which line it dies at when it dies.
+
+0.07 Tue Oct 22 16:14:29 CDT 2002
+   - Fixed a bug with auto-arguments in &subr syntax which could cause
+     weird temporary filenames [spotted by Gavin Brock]
