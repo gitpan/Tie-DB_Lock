@@ -3,3 +3,7 @@ Revision history for Perl extension Tie::DB_Lock.
 0.01  Tue May 26 16:27:27 1998
 	- original version; created by h2xs 1.18
 
+0.02  Thu Jul 23 11:08:25 EDT 1998
+   - I had omitted a file (db/README) from MANIFEST,
+     that made "make test" fail.  The code was still
+     fully operational, but the test failed.

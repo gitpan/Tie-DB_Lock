@@ -3,4 +3,5 @@ DB_Lock.pm
 MANIFEST
 Makefile.PL
 README
+db/README
 test.pl

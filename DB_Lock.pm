@@ -7,7 +7,7 @@ use DB_File;
 use FileHandle;
 
 use vars qw($VERSION $WAIT_TIME $RETRIES $TEMPDIR $VERBOSE $TIEPACK);
-$VERSION = '0.01';
+$VERSION = '0.02';
 $TEMPDIR ||= "/tmp";
 $TIEPACK ||= 'DB_File';
 
