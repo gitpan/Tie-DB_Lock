@@ -3,7 +3,7 @@
 
 ######################### We start with some black magic to print on failure.
 
-BEGIN { $| = 1; print "1..15\n"; }
+BEGIN { $| = 1; print "1..16\n"; }
 END {print "not ok 1\n" unless $loaded;}
 use Tie::DB_Lock;
 $loaded = 1;
@@ -18,7 +18,7 @@ sub report_result {
 	$TEST_NUM++;
 }
 
-$Tie::DB_Lock::TEMPDIR = "/tmp";  # Change this if you can't write to /tmp, or don't want to
+$Tie::DB_Lock::TEMPDIR = "tmp";
 $Tie::DB_Lock::RETRIES = 1;
 $Tie::DB_Lock::VERBOSE = 1 if $ENV{VERY_VERBOSE};
 $ENV{TEST_VERBOSE} = 1 if $ENV{VERY_VERBOSE};
@@ -30,6 +30,7 @@ unlink $file2;
 
 # 2: Make sure we can write to the TEMPDIR
 {
+	mkdir $Tie::DB_Lock::TEMPDIR, 0700;
 	my $ok = (-w $Tie::DB_Lock::TEMPDIR and -d $Tie::DB_Lock::TEMPDIR);
 	&report_result($ok);
 	unless ($ok) {
@@ -98,3 +99,4 @@ untie %hash2;
 
 unlink $file1;
 unlink $file2;
+rmdir $Tie::DB_Lock::TEMPDIR;

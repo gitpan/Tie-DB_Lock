@@ -22,3 +22,7 @@ Revision history for Perl extension Tie::DB_Lock.
      the FileHandle package.  I've added a VERY_VERBOSE=1 test flag that
 	  should help track the problem further - it just sets the variable
 	  $Tie::DB_Lock::VERBOSE to 1.
+
+0.05 Tue Aug 11 18:14:32 EDT 1998
+   - Changed the TIEHASH method so that it returns undef when the $TIEPACK->TIEHASH
+     method fails.  This makes error checking much more reliable.

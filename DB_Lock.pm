@@ -7,7 +7,7 @@ use DB_File;
 use FileHandle;
 
 use vars qw($VERSION $WAIT_TIME $RETRIES $TEMPDIR $VERBOSE $TIEPACK);
-$VERSION = '0.04';
+$VERSION = '0.05';
 $TEMPDIR ||= "/tmp";
 $TIEPACK ||= 'DB_File';
 
@@ -121,6 +121,11 @@ sub TIEHASH {
 			warn("Couldn't remove tempfile $tempfile: $!");
 			return;
 		}
+	}
+
+	unless ($self->{'db'}) {
+		carp "$TIEPACK->TIEHASH failed: $!";
+		return;
 	}
 	
 	return bless ($self, $class);
